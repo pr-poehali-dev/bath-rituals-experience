@@ -1,14 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/HeroSection';
+import MarqueeBar from '@/components/MarqueeBar';
+import RitualsSection from '@/components/RitualsSection';
+import AboutSection from '@/components/AboutSection';
+import MastersSection from '@/components/MastersSection';
+import ReviewsSection from '@/components/ReviewsSection';
+import BookingSection from '@/components/BookingSection';
+import FaqSection from '@/components/FaqSection';
+import ContactsSection from '@/components/ContactsSection';
+import Footer from '@/components/Footer';
 
-const Index = () => {
+export default function Index() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen" style={{ background: 'var(--dark)' }}>
+      <Navbar />
+      <HeroSection />
+      <MarqueeBar />
+      <RitualsSection />
+      <AboutSection />
+      <MastersSection />
+      <ReviewsSection />
+      <BookingSection />
+      <FaqSection />
+      <ContactsSection />
+      <Footer />
     </div>
   );
-};
-
-export default Index;
+}
