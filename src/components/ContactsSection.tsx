@@ -16,8 +16,8 @@ function useInView() {
 }
 
 const contacts = [
-  { icon: 'MapPin', label: 'Адрес', value: 'Укажите ваш адрес', sub: 'Ближайшее метро · мин пешком' },
-  { icon: 'Phone', label: 'Телефон', value: '+7 (___) ___-__-__', sub: 'Пн–Вс, 9:00–21:00' },
+  { icon: 'MapPin', label: 'Адрес', value: 'мкр. Глобус 2, дом 1А', sub: 'г. Артём' },
+  { icon: 'Phone', label: 'Телефон', value: '+7 (908) 980-35-45', sub: 'Пн–Вс, 9:00–21:00' },
   { icon: 'Mail', label: 'Email', value: 'info@prostranstvo-para.ru', sub: 'Ответим в течение часа' },
   { icon: 'Clock', label: 'Часы работы', value: 'Ежедневно 9:00–21:00', sub: 'Без выходных' },
 ];
@@ -47,7 +47,7 @@ export default function ContactsSection() {
               Найдите<br /><em className="text-gold not-italic">нас</em>
             </h2>
             <p className="font-golos text-cream/50 text-sm leading-relaxed mb-10 max-w-sm">
-              Ждём вас в нашем СПА-салоне. Для вопросов и записи — свяжитесь любым удобным способом.
+              Ждём вас в Пространстве Пара. Для вопросов и записи — свяжитесь любым удобным способом.
             </p>
 
             <div className="flex flex-col gap-5">
@@ -88,7 +88,7 @@ export default function ContactsSection() {
                 </div>
                 <div className="text-center">
                   <div className="font-cormorant text-xl text-cream">Пространство Пара</div>
-                  <div className="font-golos text-xs text-cream/40 mt-1">Укажите адрес</div>
+                  <div className="font-golos text-xs text-cream/40 mt-1">г. Артём, мкр. Глобус 2, д. 1А</div>
                 </div>
               </div>
             </div>
