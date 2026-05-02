@@ -44,10 +44,10 @@ export default function HeroSection() {
         </div>
 
         <div className="overflow-hidden mb-4">
-          <h1 className="font-cormorant text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light leading-[0.9]">
-            <span ref={(el) => { if (el) wordsRef.current[0] = el; }} className="block text-cream">Массаж.</span>
-            <span ref={(el) => { if (el) wordsRef.current[1] = el; }} className="block" style={{ WebkitTextStroke: '1px rgba(212,168,87,0.6)', color: 'transparent' }}>Обёртывание.</span>
-            <span ref={(el) => { if (el) wordsRef.current[2] = el; }} className="block text-gold">Уход.</span>
+          <h1 className="font-cormorant font-light leading-[0.9]">
+            <span ref={(el) => { if (el) wordsRef.current[0] = el; }} className="block text-cream" style={{ fontSize: 'clamp(2.2rem, 6vw, 5rem)', letterSpacing: '0.05em' }}>Пространство Пара</span>
+            <span ref={(el) => { if (el) wordsRef.current[1] = el; }} className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl mt-3" style={{ WebkitTextStroke: '1px rgba(212,168,87,0.6)', color: 'transparent' }}>Массаж.</span>
+            <span ref={(el) => { if (el) wordsRef.current[2] = el; }} className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold">Уход.</span>
           </h1>
         </div>
 
@@ -63,6 +63,29 @@ export default function HeroSection() {
             Все процедуры <Icon name="ArrowRight" size={14} />
           </button>
         </div>
+
+        {/* Яндекс — Хорошее место */}
+        <a
+          href="https://yandex.ru/maps/org/9801271735"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 mt-8 opacity-0 animate-fade-in delay-800 group"
+          style={{ animationFillMode: 'forwards' }}
+        >
+          <div
+            className="flex items-center gap-3 px-4 py-2.5 rounded-sm transition-all duration-300 group-hover:border-gold/40"
+            style={{ background: 'rgba(212,168,87,0.06)', border: '1px solid rgba(212,168,87,0.18)' }}
+          >
+            <div className="flex items-center justify-center w-7 h-7 rounded-full" style={{ background: 'linear-gradient(135deg, #FC3F1D 0%, #FF6534 100%)' }}>
+              <span className="text-white font-bold text-xs leading-none">Я</span>
+            </div>
+            <div>
+              <div className="font-golos text-[10px] tracking-[0.15em] uppercase text-cream/35">Яндекс Карты</div>
+              <div className="font-golos text-xs font-medium text-gold/80 group-hover:text-gold transition-colors">🏅 Награда «Хорошее место»</div>
+            </div>
+            <Icon name="ExternalLink" size={12} color="rgba(212,168,87,0.4)" />
+          </div>
+        </a>
 
         <div className="flex flex-wrap gap-12 mt-20 opacity-0 animate-fade-in delay-800" style={{ animationFillMode: 'forwards' }}>
           {[
