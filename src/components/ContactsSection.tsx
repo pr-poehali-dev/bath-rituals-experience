@@ -83,18 +83,32 @@ export default function ContactsSection() {
 
           {/* Right */}
           <div style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateX(0)' : 'translateX(30px)', transition: 'all 0.8s ease 0.2s' }}>
-            <div className="relative aspect-[4/3] rounded-sm overflow-hidden mb-6 flex items-center justify-center" style={{ background: 'var(--dark-3)', border: '1px solid rgba(212,168,87,0.1)' }}>
+            <a
+              href="https://yandex.ru/maps/org/9801271735"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative aspect-[4/3] rounded-sm overflow-hidden mb-6 flex items-center justify-center group block transition-all duration-300 hover:border-gold/30"
+              style={{ background: 'var(--dark-3)', border: '1px solid rgba(212,168,87,0.1)' }}
+            >
               <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(212,168,87,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,87,0.04) 1px,transparent 1px)', backgroundSize: '30px 30px' }} />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: 'rgba(212,168,87,0.03)' }} />
               <div className="relative flex flex-col items-center gap-3">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(212,168,87,0.15)' }}>
+                <div className="w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110" style={{ background: 'rgba(212,168,87,0.15)' }}>
                   <Icon name="MapPin" size={20} color="var(--gold)" />
                 </div>
                 <div className="text-center">
                   <div className="font-cormorant text-xl text-cream">Пространство Пара</div>
                   <div className="font-golos text-xs text-cream/40 mt-1">г. Артём, мкр. Глобус 2, д. 1А</div>
+                  <div className="flex items-center justify-center gap-1.5 mt-3">
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(135deg, #FC3F1D 0%, #FF6534 100%)' }}>
+                      <span className="text-white font-bold" style={{ fontSize: '9px' }}>Я</span>
+                    </div>
+                    <span className="font-golos text-xs text-gold/70 group-hover:text-gold transition-colors">Открыть на Яндекс Картах</span>
+                    <Icon name="ExternalLink" size={11} color="rgba(212,168,87,0.5)" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
 
             <div className="p-6 rounded-sm" style={{ background: 'var(--dark-3)', border: '1px solid rgba(212,168,87,0.1)' }}>
               <div className="font-cormorant text-xl text-cream mb-4">Обратный звонок</div>

@@ -64,30 +64,46 @@ export default function HeroSection() {
           </button>
         </div>
 
-        {/* Яндекс — Хорошее место */}
-        <a
-          href="https://yandex.ru/maps/org/9801271735"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 mt-8 opacity-0 animate-fade-in delay-800 group"
-          style={{ animationFillMode: 'forwards' }}
-        >
+        {/* Badges row */}
+        <div className="flex flex-wrap items-center gap-3 mt-8 opacity-0 animate-fade-in delay-800" style={{ animationFillMode: 'forwards' }}>
+          {/* Хорошее место */}
+          <a
+            href="https://yandex.ru/maps/org/9801271735"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex group"
+          >
+            <div
+              className="flex items-center gap-3 px-4 py-2.5 rounded-sm transition-all duration-300 group-hover:border-gold/40"
+              style={{ background: 'rgba(212,168,87,0.06)', border: '1px solid rgba(212,168,87,0.18)' }}
+            >
+              <div className="flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #FC3F1D 0%, #FF6534 100%)' }}>
+                <span className="text-white font-bold text-xs leading-none">Я</span>
+              </div>
+              <div>
+                <div className="font-golos text-[10px] tracking-[0.15em] uppercase text-cream/35">Яндекс Карты</div>
+                <div className="font-golos text-xs font-medium text-gold/80 group-hover:text-gold transition-colors">🏅 Хорошее место</div>
+              </div>
+              <Icon name="ExternalLink" size={12} color="rgba(212,168,87,0.4)" />
+            </div>
+          </a>
+
+          {/* 3 года */}
           <div
-            className="flex items-center gap-3 px-4 py-2.5 rounded-sm transition-all duration-300 group-hover:border-gold/40"
+            className="flex items-center gap-3 px-4 py-2.5 rounded-sm"
             style={{ background: 'rgba(212,168,87,0.06)', border: '1px solid rgba(212,168,87,0.18)' }}
           >
-            <div className="flex items-center justify-center w-7 h-7 rounded-full" style={{ background: 'linear-gradient(135deg, #FC3F1D 0%, #FF6534 100%)' }}>
-              <span className="text-white font-bold text-xs leading-none">Я</span>
+            <div className="flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0" style={{ background: 'rgba(212,168,87,0.15)' }}>
+              <span className="text-gold text-sm">✦</span>
             </div>
             <div>
-              <div className="font-golos text-[10px] tracking-[0.15em] uppercase text-cream/35">Яндекс Карты</div>
-              <div className="font-golos text-xs font-medium text-gold/80 group-hover:text-gold transition-colors">🏅 Награда «Хорошее место»</div>
+              <div className="font-golos text-[10px] tracking-[0.15em] uppercase text-cream/35">С нами с 2022</div>
+              <div className="font-golos text-xs font-medium text-gold/80">3 года безупречной работы</div>
             </div>
-            <Icon name="ExternalLink" size={12} color="rgba(212,168,87,0.4)" />
           </div>
-        </a>
+        </div>
 
-        <div className="flex flex-wrap gap-12 mt-20 opacity-0 animate-fade-in delay-800" style={{ animationFillMode: 'forwards' }}>
+        <div className="flex flex-wrap gap-12 mt-16 opacity-0 animate-fade-in delay-800" style={{ animationFillMode: 'forwards' }}>
           {[
             { num: '3', label: 'Года работы' },
             { num: '500+', label: 'Гостей' },
