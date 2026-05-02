@@ -100,7 +100,7 @@ export default function ContactsSection() {
               <div className="font-cormorant text-xl text-cream mb-4">Обратный звонок</div>
               <div className="flex gap-3 flex-col sm:flex-row">
                 <input type="tel" placeholder="+7 (___) ___-__-__" className="flex-1 px-4 py-3 rounded-sm font-golos text-sm text-cream placeholder-cream/20 outline-none transition-all" style={{ background: 'var(--dark-2)', border: '1px solid rgba(212,168,87,0.15)' }} />
-                <button className="btn-gold whitespace-nowrap" disabled={!agreed} style={{ opacity: agreed ? 1 : 0.4 }}>Позвоните мне</button>
+                <a href="tel:+79089803545" className={`btn-gold whitespace-nowrap ${!agreed ? 'pointer-events-none' : ''}`} style={{ opacity: agreed ? 1 : 0.4 }}>Позвоните мне</a>
               </div>
 
               {/* Consent */}
