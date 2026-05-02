@@ -88,6 +88,28 @@ export default function HeroSection() {
             </div>
           </a>
 
+          {/* 2GIS */}
+          <a
+            href="https://go.2gis.com/0HDqT"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex group"
+          >
+            <div
+              className="flex items-center gap-3 px-4 py-2.5 rounded-sm transition-all duration-300 group-hover:border-gold/40"
+              style={{ background: 'rgba(212,168,87,0.06)', border: '1px solid rgba(212,168,87,0.18)' }}
+            >
+              <div className="flex items-center justify-center w-7 h-7 rounded-full flex-shrink-0" style={{ background: 'linear-gradient(135deg, #29CC29 0%, #1A9A1A 100%)' }}>
+                <span className="text-white font-bold text-xs leading-none">2</span>
+              </div>
+              <div>
+                <div className="font-golos text-[10px] tracking-[0.15em] uppercase text-cream/35">2GIS</div>
+                <div className="font-golos text-xs font-medium text-gold/80 group-hover:text-gold transition-colors">Мы на карте</div>
+              </div>
+              <Icon name="ExternalLink" size={12} color="rgba(212,168,87,0.4)" />
+            </div>
+          </a>
+
           {/* 3 года */}
           <div
             className="flex items-center gap-3 px-4 py-2.5 rounded-sm"
