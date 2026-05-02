@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
+import LegalModal from '@/components/LegalModal';
 
 const procedureOptions = [
   'Классический массаж — 60 мин · от 3 000 ₽',
@@ -45,6 +46,8 @@ export default function BookingSection() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [comment, setComment] = useState('');
+  const [agreed, setAgreed] = useState(false);
+  const [modal, setModal] = useState<'privacy' | 'consent' | null>(null);
 
   const steps: { key: BookStep; label: string }[] = [
     { key: 'procedure', label: 'Процедура' },
@@ -242,9 +245,30 @@ export default function BookingSection() {
                   <textarea value={comment} onChange={e => setComment(e.target.value)} placeholder="Особые пожелания, противопоказания..." rows={3} className="w-full px-4 py-3 rounded-sm font-golos text-sm text-cream placeholder-cream/20 outline-none resize-none transition-all" style={{ background: 'var(--dark-2)', border: '1px solid rgba(212,168,87,0.15)' }} />
                 </div>
               </div>
-              <div className="flex justify-between mt-8">
+              {/* Consent checkbox */}
+              <div className="flex items-start gap-3 mt-2">
+                <button
+                  onClick={() => setAgreed(!agreed)}
+                  className="flex-shrink-0 w-5 h-5 rounded-sm border flex items-center justify-center transition-all duration-200 mt-0.5"
+                  style={{ background: agreed ? 'var(--gold)' : 'transparent', borderColor: agreed ? 'var(--gold)' : 'rgba(212,168,87,0.3)' }}
+                >
+                  {agreed && <Icon name="Check" size={11} color="var(--dark)" />}
+                </button>
+                <p className="font-golos text-xs text-cream/35 leading-relaxed">
+                  Я ознакомлен(а) и согласен(на) с{' '}
+                  <button onClick={() => setModal('privacy')} className="text-gold/70 hover:text-gold underline underline-offset-2 transition-colors">
+                    Политикой конфиденциальности
+                  </button>{' '}
+                  и даю{' '}
+                  <button onClick={() => setModal('consent')} className="text-gold/70 hover:text-gold underline underline-offset-2 transition-colors">
+                    согласие на обработку персональных данных
+                  </button>
+                </p>
+              </div>
+
+              <div className="flex justify-between mt-6">
                 <button className="btn-outline-gold" onClick={() => setStep('datetime')}>Назад</button>
-                <button className="btn-gold flex items-center gap-2" disabled={!name || !phone} style={{ opacity: name && phone ? 1 : 0.4 }} onClick={() => setStep('done')}>
+                <button className="btn-gold flex items-center gap-2" disabled={!name || !phone || !agreed} style={{ opacity: name && phone && agreed ? 1 : 0.4 }} onClick={() => setStep('done')}>
                   Подтвердить запись <Icon name="Check" size={13} />
                 </button>
               </div>
@@ -252,6 +276,8 @@ export default function BookingSection() {
           )}
         </div>
       </div>
+
+      {modal && <LegalModal type={modal} onClose={() => setModal(null)} />}
     </section>
   );
 }

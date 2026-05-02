@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import Icon from '@/components/ui/icon';
+import LegalModal from '@/components/LegalModal';
 
 const footerLinks = [
   { label: 'Процедуры', href: '#rituals' },
@@ -13,6 +15,7 @@ export default function Footer() {
   const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
+  const [modal, setModal] = useState<'privacy' | 'consent' | null>(null);
 
   return (
     <footer className="relative py-16" style={{ background: 'var(--dark)', borderTop: '1px solid rgba(212,168,87,0.1)' }}>
@@ -52,12 +55,18 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8" style={{ borderTop: '1px solid rgba(212,168,87,0.08)' }}>
           <span className="font-golos text-xs text-cream/20">© 2026 Пространство Пара. Все права защищены.</span>
-          <div className="flex items-center gap-2 text-cream/20">
-            <Icon name="Heart" size={10} color="rgba(232,112,90,0.5)" />
-            <span className="font-golos text-xs">Создано с заботой о вас</span>
+          <div className="flex items-center gap-4 flex-wrap justify-center">
+            <button onClick={() => setModal('privacy')} className="font-golos text-xs text-cream/25 hover:text-gold/60 transition-colors underline underline-offset-2">
+              Политика конфиденциальности
+            </button>
+            <button onClick={() => setModal('consent')} className="font-golos text-xs text-cream/25 hover:text-gold/60 transition-colors underline underline-offset-2">
+              Согласие на обработку данных
+            </button>
           </div>
         </div>
       </div>
+
+      {modal && <LegalModal type={modal} onClose={() => setModal(null)} />}
     </footer>
   );
 }
