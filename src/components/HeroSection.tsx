@@ -40,7 +40,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-32 pb-20">
         <div className="flex items-center gap-3 mb-8 opacity-0 animate-fade-in delay-100" style={{ animationFillMode: 'forwards' }}>
           <div className="w-8 h-px bg-gold/60" />
-          <span className="font-golos text-xs tracking-[0.3em] uppercase text-gold/70">СПА-салон · Пространство Пара</span>
+          <span className="font-golos text-xs tracking-[0.3em] uppercase text-gold/70">СПА · Пространство Пара</span>
         </div>
 
         <div className="overflow-hidden mb-4">
@@ -66,9 +66,9 @@ export default function HeroSection() {
 
         <div className="flex flex-wrap gap-12 mt-20 opacity-0 animate-fade-in delay-800" style={{ animationFillMode: 'forwards' }}>
           {[
-            { num: '7+', label: 'Лет работы' },
-            { num: '25+', label: 'Процедур' },
-            { num: '2500+', label: 'Гостей в год' },
+            { num: '3', label: 'Года работы' },
+            { num: '500+', label: 'Гостей' },
+            { num: '15+', label: 'Процедур' },
           ].map((stat) => (
             <div key={stat.num} className="flex flex-col">
               <span className="font-cormorant text-4xl text-gold font-light">{stat.num}</span>
