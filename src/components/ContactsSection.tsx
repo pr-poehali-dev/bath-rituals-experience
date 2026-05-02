@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Icon from '@/components/ui/icon';
+import LegalModal from '@/components/LegalModal';
 
 function useInView() {
   const ref = useRef<HTMLDivElement>(null);
@@ -30,6 +31,8 @@ const socials = [
 
 export default function ContactsSection() {
   const { ref, inView } = useInView();
+  const [agreed, setAgreed] = useState(false);
+  const [modal, setModal] = useState<'privacy' | 'consent' | null>(null);
 
   return (
     <section id="contacts" className="relative py-28 overflow-hidden" style={{ background: 'var(--dark)' }}>
@@ -97,13 +100,37 @@ export default function ContactsSection() {
               <div className="font-cormorant text-xl text-cream mb-4">Обратный звонок</div>
               <div className="flex gap-3 flex-col sm:flex-row">
                 <input type="tel" placeholder="+7 (___) ___-__-__" className="flex-1 px-4 py-3 rounded-sm font-golos text-sm text-cream placeholder-cream/20 outline-none transition-all" style={{ background: 'var(--dark-2)', border: '1px solid rgba(212,168,87,0.15)' }} />
-                <button className="btn-gold whitespace-nowrap">Позвоните мне</button>
+                <button className="btn-gold whitespace-nowrap" disabled={!agreed} style={{ opacity: agreed ? 1 : 0.4 }}>Позвоните мне</button>
               </div>
+
+              {/* Consent */}
+              <div className="flex items-start gap-3 mt-4">
+                <button
+                  onClick={() => setAgreed(!agreed)}
+                  className="flex-shrink-0 w-5 h-5 rounded-sm border flex items-center justify-center transition-all duration-200 mt-0.5"
+                  style={{ background: agreed ? 'var(--gold)' : 'transparent', borderColor: agreed ? 'var(--gold)' : 'rgba(212,168,87,0.3)' }}
+                >
+                  {agreed && <Icon name="Check" size={11} color="var(--dark)" />}
+                </button>
+                <p className="font-golos text-xs text-cream/35 leading-relaxed">
+                  Согласен(на) с{' '}
+                  <button onClick={() => setModal('privacy')} className="text-gold/70 hover:text-gold underline underline-offset-2 transition-colors">
+                    Политикой конфиденциальности
+                  </button>{' '}
+                  и даю{' '}
+                  <button onClick={() => setModal('consent')} className="text-gold/70 hover:text-gold underline underline-offset-2 transition-colors">
+                    согласие на обработку данных
+                  </button>
+                </p>
+              </div>
+
               <p className="font-golos text-[10px] text-cream/20 mt-3">Перезвоним в течение 15 минут в рабочее время</p>
             </div>
           </div>
         </div>
       </div>
+
+      {modal && <LegalModal type={modal} onClose={() => setModal(null)} />}
     </section>
   );
 }
