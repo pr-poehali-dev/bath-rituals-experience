@@ -37,18 +37,18 @@ export default function AboutSection() {
               <div className="absolute inset-0" style={{ background: 'linear-gradient(160deg, rgba(212,168,87,0.08) 0%, transparent 50%, rgba(232,112,90,0.06) 100%)' }} />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-6">
                 <div className="w-24 h-24 rounded-full" style={{ background: 'radial-gradient(circle, rgba(212,168,87,0.3) 0%, transparent 70%)', animation: 'float 5s ease-in-out infinite' }} />
-                <span className="font-cormorant text-8xl text-center" style={{ color: 'rgba(212,168,87,0.15)', fontStyle: 'italic' }}>7</span>
-                <span className="font-golos text-xs tracking-[0.3em] uppercase text-cream/20">лет совершенства</span>
+                <span className="font-cormorant text-8xl text-center" style={{ color: 'rgba(212,168,87,0.15)', fontStyle: 'italic' }}>3</span>
+                <span className="font-golos text-xs tracking-[0.3em] uppercase text-cream/20">года совершенства</span>
               </div>
             </div>
 
             <div className="absolute -bottom-6 -right-6 p-6 rounded-sm" style={{ background: 'var(--gold)', width: '160px', position: 'absolute', bottom: '-24px', right: '-24px' }}>
-              <div className="font-cormorant text-4xl font-light text-dark leading-none">25+</div>
+              <div className="font-cormorant text-4xl font-light text-dark leading-none">15+</div>
               <div className="font-golos text-xs text-dark/70 tracking-widest uppercase mt-1">Процедур</div>
             </div>
 
             <div className="absolute -top-6 -left-6 p-4 rounded-sm hidden lg:block" style={{ background: 'var(--dark-3)', border: '1px solid rgba(212,168,87,0.2)', width: '140px', position: 'absolute', top: '-24px', left: '-24px' }}>
-              <div className="font-cormorant text-3xl font-light text-gold leading-none">2.5K+</div>
+              <div className="font-cormorant text-3xl font-light text-gold leading-none">500+</div>
               <div className="font-golos text-xs text-cream/40 tracking-widest uppercase mt-1">Гостей</div>
             </div>
           </div>
@@ -67,10 +67,10 @@ export default function AboutSection() {
             </h2>
 
             <p className="font-golos text-cream/60 text-sm leading-relaxed mb-6">
-              «Пространство Пара» — это профессиональный СПА-салон, где каждая процедура подбирается индивидуально. Мы работаем с профессиональной косметикой и используем только проверенные техники.
+              «Пространство Пара» — это СПА, где каждая процедура подбирается индивидуально. Мы работаем с профессиональной косметикой и используем только проверенные техники.
             </p>
             <p className="font-golos text-cream/50 text-sm leading-relaxed mb-12">
-              За 7 лет работы через наши руки прошли тысячи гостей, которые возвращаются снова и снова. Для нас важен результат — а не количество процедур.
+              За 3 года работы через наши руки прошло более 500 гостей, которые возвращаются снова и снова. Для нас важен результат — а не количество процедур.
             </p>
 
             <div className="flex flex-col gap-5">
