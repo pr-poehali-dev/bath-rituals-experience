@@ -98,7 +98,7 @@ export default function HeroSection() {
             </div>
             <div>
               <div className="font-golos text-[10px] tracking-[0.15em] uppercase text-cream/35">С нами с 2022</div>
-              <div className="font-golos text-xs font-medium text-gold/80">3 года безупречной работы</div>
+              <div className="font-golos text-xs font-medium text-gold/80">3 года безупречного сервиса</div>
             </div>
           </div>
         </div>
