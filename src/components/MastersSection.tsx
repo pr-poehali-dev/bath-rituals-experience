@@ -17,9 +17,9 @@ function useInView() {
 
 const masters = [
   {
-    name: 'Алина Соколова',
-    role: 'Старший мастер',
-    spec: 'Тайский массаж · Балийские ритуалы',
+    name: 'Анна Соколова',
+    role: 'Массажист',
+    spec: 'Классический · Антицеллюлитный · Горячие камни',
     exp: '8 лет',
     rating: 4.9,
     reviews: 312,
@@ -30,9 +30,9 @@ const masters = [
   {
     name: 'Марина Вебер',
     role: 'Косметолог',
-    spec: 'Уход за лицом · Пилинги · Микротоки',
+    spec: 'Уход за лицом · Пилинги · Чистки',
     exp: '6 лет',
-    rating: 4.8,
+    rating: 4.9,
     reviews: 215,
     color: '#E8705A',
     initials: 'МВ',
@@ -41,7 +41,7 @@ const masters = [
   {
     name: 'Дмитрий Орлов',
     role: 'Массажист',
-    spec: 'Горячие камни · Детокс · Флоатинг',
+    spec: 'Лимфодренаж · Спортивный · Релакс',
     exp: '10 лет',
     rating: 5.0,
     reviews: 418,
@@ -51,8 +51,8 @@ const masters = [
   },
   {
     name: 'Ольга Сайто',
-    role: 'SPA-технолог',
-    spec: 'Обёртывания · Ароматерапия · Скрабы',
+    role: 'СПА-специалист',
+    spec: 'Обёртывания · Скрабы · Ароматерапия',
     exp: '7 лет',
     rating: 4.9,
     reviews: 267,
@@ -68,7 +68,6 @@ export default function MastersSection() {
   return (
     <section id="masters" className="relative py-28" style={{ background: 'var(--dark-3)' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10" ref={ref}>
-        {/* Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-px" style={{ background: 'var(--gold)' }} />
@@ -77,17 +76,12 @@ export default function MastersSection() {
           </div>
           <h2
             className="font-cormorant text-5xl md:text-6xl font-light text-cream"
-            style={{
-              opacity: inView ? 1 : 0,
-              transform: inView ? 'translateY(0)' : 'translateY(30px)',
-              transition: 'all 0.8s ease',
-            }}
+            style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.8s ease' }}
           >
-            Мастера <em className="text-gold not-italic">AURA</em>
+            Наши <em className="text-gold not-italic">специалисты</em>
           </h2>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {masters.map((m, i) => (
             <div
@@ -101,48 +95,22 @@ export default function MastersSection() {
                 transition: `all 0.7s ease ${0.1 + i * 0.1}s`,
               }}
             >
-              {/* Hover bg */}
               <div className={`absolute inset-0 bg-gradient-to-b ${m.bg} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-
-              {/* Top accent */}
-              <div
-                className="absolute top-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
-                style={{ background: m.color, transformOrigin: 'left' }}
-              />
+              <div className="absolute top-0 left-0 right-0 h-0.5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" style={{ background: m.color, transformOrigin: 'left' }} />
 
               <div className="relative z-10 p-6">
-                {/* Avatar */}
                 <div className="relative mb-5">
-                  <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center text-xl font-cormorant font-light mx-auto"
-                    style={{
-                      background: `${m.color}20`,
-                      border: `2px solid ${m.color}40`,
-                      color: m.color,
-                      fontSize: '1.5rem',
-                    }}
-                  >
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto font-cormorant font-light" style={{ background: `${m.color}20`, border: `2px solid ${m.color}40`, color: m.color, fontSize: '1.5rem' }}>
                     {m.initials}
                   </div>
-                  {/* Online dot */}
-                  <div
-                    className="absolute bottom-0 right-[calc(50%-32px-4px)] w-3 h-3 rounded-full border-2"
-                    style={{ background: '#4CAF50', borderColor: 'var(--dark-2)' }}
-                  />
+                  <div className="absolute bottom-0 right-[calc(50%-32px-4px)] w-3 h-3 rounded-full border-2" style={{ background: '#4CAF50', borderColor: 'var(--dark-2)' }} />
                 </div>
 
                 <div className="text-center">
                   <h3 className="font-cormorant text-xl text-cream font-light mb-0.5">{m.name}</h3>
-                  <div className="font-golos text-[10px] tracking-widest uppercase mb-1" style={{ color: m.color }}>
-                    {m.role}
-                  </div>
+                  <div className="font-golos text-[10px] tracking-widest uppercase mb-1" style={{ color: m.color }}>{m.role}</div>
                   <p className="font-golos text-xs text-cream/40 leading-relaxed mb-4">{m.spec}</p>
-
-                  <div
-                    className="h-px mb-4"
-                    style={{ background: 'rgba(212,168,87,0.1)' }}
-                  />
-
+                  <div className="h-px mb-4" style={{ background: 'rgba(212,168,87,0.1)' }} />
                   <div className="flex items-center justify-between text-xs">
                     <div className="flex items-center gap-1">
                       <Icon name="Star" size={11} color={m.color} />
@@ -154,16 +122,8 @@ export default function MastersSection() {
                 </div>
               </div>
 
-              {/* Book button */}
-              <div
-                className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-                style={{ background: 'linear-gradient(to top, var(--dark-2) 80%, transparent)' }}
-              >
-                <button
-                  onClick={() => document.querySelector('#booking')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full py-2 text-xs font-golos font-medium tracking-wider uppercase text-dark rounded-sm transition-all"
-                  style={{ background: m.color }}
-                >
+              <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" style={{ background: 'linear-gradient(to top, var(--dark-2) 80%, transparent)' }}>
+                <button onClick={() => document.querySelector('#booking')?.scrollIntoView({ behavior: 'smooth' })} className="w-full py-2 text-xs font-golos font-medium tracking-wider uppercase text-dark rounded-sm" style={{ background: m.color }}>
                   Записаться
                 </button>
               </div>

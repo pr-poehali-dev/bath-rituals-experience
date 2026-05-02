@@ -16,16 +16,16 @@ function useInView() {
 }
 
 const contacts = [
-  { icon: 'MapPin', label: 'Адрес', value: 'Москва, ул. Пречистенка, 12', sub: 'м. Кропоткинская, 5 мин пешком' },
-  { icon: 'Phone', label: 'Телефон', value: '+7 (495) 000-00-00', sub: 'Пн–Вс, 9:00–22:00' },
-  { icon: 'Mail', label: 'Email', value: 'hello@aura-spa.ru', sub: 'Ответим в течение часа' },
-  { icon: 'Clock', label: 'Часы работы', value: 'Ежедневно 9:00–22:00', sub: 'Без выходных и праздников' },
+  { icon: 'MapPin', label: 'Адрес', value: 'Укажите ваш адрес', sub: 'Ближайшее метро · мин пешком' },
+  { icon: 'Phone', label: 'Телефон', value: '+7 (___) ___-__-__', sub: 'Пн–Вс, 9:00–21:00' },
+  { icon: 'Mail', label: 'Email', value: 'info@prostranstvo-para.ru', sub: 'Ответим в течение часа' },
+  { icon: 'Clock', label: 'Часы работы', value: 'Ежедневно 9:00–21:00', sub: 'Без выходных' },
 ];
 
 const socials = [
-  { icon: 'Instagram', label: 'Instagram', handle: '@aura.spa' },
-  { icon: 'MessageCircle', label: 'Telegram', handle: '@auraspa' },
-  { icon: 'Youtube', label: 'VK', handle: 'vk.com/auraspa' },
+  { icon: 'Instagram', label: 'Instagram', handle: '@prostranstvo.para' },
+  { icon: 'MessageCircle', label: 'Telegram', handle: '@prostranstvopara' },
+  { icon: 'Youtube', label: 'VK', handle: 'vk.com/prostranstvopara' },
 ];
 
 export default function ContactsSection() {
@@ -33,55 +33,27 @@ export default function ContactsSection() {
 
   return (
     <section id="contacts" className="relative py-28 overflow-hidden" style={{ background: 'var(--dark)' }}>
-      {/* bg deco */}
-      <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: 'radial-gradient(circle, rgba(212,168,87,0.06) 0%, transparent 70%)',
-          transform: 'translate(30%, -30%)',
-        }}
-      />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(212,168,87,0.06) 0%,transparent 70%)', transform: 'translate(30%,-30%)' }} />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left */}
-          <div
-            style={{
-              opacity: inView ? 1 : 0,
-              transform: inView ? 'translateX(0)' : 'translateX(-30px)',
-              transition: 'all 0.8s ease',
-            }}
-          >
+          <div style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateX(0)' : 'translateX(-30px)', transition: 'all 0.8s ease' }}>
             <div className="flex items-center gap-3 mb-5">
               <div className="w-8 h-px" style={{ background: 'var(--gold)' }} />
               <span className="font-golos text-xs tracking-[0.3em] uppercase text-gold/70">Контакты</span>
             </div>
-
             <h2 className="font-cormorant text-5xl md:text-6xl font-light text-cream mb-6">
-              Найдите<br />
-              <em className="text-gold not-italic">нас</em>
+              Найдите<br /><em className="text-gold not-italic">нас</em>
             </h2>
-
             <p className="font-golos text-cream/50 text-sm leading-relaxed mb-10 max-w-sm">
-              Ждём вас в нашем СПА. Для вопросов и записи — свяжитесь удобным способом.
+              Ждём вас в нашем СПА-салоне. Для вопросов и записи — свяжитесь любым удобным способом.
             </p>
 
-            {/* Contact list */}
             <div className="flex flex-col gap-5">
               {contacts.map((c, i) => (
-                <div
-                  key={c.label}
-                  className="flex gap-4"
-                  style={{
-                    opacity: inView ? 1 : 0,
-                    transform: inView ? 'translateX(0)' : 'translateX(-20px)',
-                    transition: `all 0.7s ease ${0.2 + i * 0.1}s`,
-                  }}
-                >
-                  <div
-                    className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0"
-                    style={{ background: 'rgba(212,168,87,0.1)', border: '1px solid rgba(212,168,87,0.15)' }}
-                  >
+                <div key={c.label} className="flex gap-4" style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateX(0)' : 'translateX(-20px)', transition: `all 0.7s ease ${0.2 + i * 0.1}s` }}>
+                  <div className="w-10 h-10 rounded-sm flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(212,168,87,0.1)', border: '1px solid rgba(212,168,87,0.15)' }}>
                     <Icon name={c.icon} size={16} color="var(--gold)" />
                   </div>
                   <div>
@@ -93,16 +65,11 @@ export default function ContactsSection() {
               ))}
             </div>
 
-            {/* Socials */}
             <div className="mt-10">
               <div className="font-golos text-[10px] tracking-widest uppercase text-cream/25 mb-4">Мы в соцсетях</div>
-              <div className="flex gap-3">
+              <div className="flex gap-3 flex-wrap">
                 {socials.map((s) => (
-                  <button
-                    key={s.label}
-                    className="flex items-center gap-2 px-3 py-2 rounded-sm font-golos text-xs text-cream/50 hover:text-gold transition-all duration-200"
-                    style={{ background: 'var(--dark-3)', border: '1px solid rgba(212,168,87,0.1)' }}
-                  >
+                  <button key={s.label} className="flex items-center gap-2 px-3 py-2 rounded-sm font-golos text-xs text-cream/50 hover:text-gold transition-all duration-200" style={{ background: 'var(--dark-3)', border: '1px solid rgba(212,168,87,0.1)' }}>
                     <Icon name={s.icon} size={14} />
                     {s.handle}
                   </button>
@@ -111,66 +78,28 @@ export default function ContactsSection() {
             </div>
           </div>
 
-          {/* Right: map placeholder + form */}
-          <div
-            style={{
-              opacity: inView ? 1 : 0,
-              transform: inView ? 'translateX(0)' : 'translateX(30px)',
-              transition: 'all 0.8s ease 0.2s',
-            }}
-          >
-            {/* Map placeholder */}
-            <div
-              className="relative aspect-[4/3] rounded-sm overflow-hidden mb-6 flex items-center justify-center"
-              style={{
-                background: 'var(--dark-3)',
-                border: '1px solid rgba(212,168,87,0.1)',
-              }}
-            >
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `
-                    linear-gradient(rgba(212,168,87,0.04) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(212,168,87,0.04) 1px, transparent 1px)
-                  `,
-                  backgroundSize: '30px 30px',
-                }}
-              />
+          {/* Right */}
+          <div style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateX(0)' : 'translateX(30px)', transition: 'all 0.8s ease 0.2s' }}>
+            <div className="relative aspect-[4/3] rounded-sm overflow-hidden mb-6 flex items-center justify-center" style={{ background: 'var(--dark-3)', border: '1px solid rgba(212,168,87,0.1)' }}>
+              <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(212,168,87,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,87,0.04) 1px,transparent 1px)', backgroundSize: '30px 30px' }} />
               <div className="relative flex flex-col items-center gap-3">
-                <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center"
-                  style={{ background: 'rgba(212,168,87,0.15)', animation: 'pulse-gold 2s infinite' }}
-                >
+                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'rgba(212,168,87,0.15)' }}>
                   <Icon name="MapPin" size={20} color="var(--gold)" />
                 </div>
                 <div className="text-center">
-                  <div className="font-cormorant text-xl text-cream">AURA SPA</div>
-                  <div className="font-golos text-xs text-cream/40 mt-1">ул. Пречистенка, 12</div>
+                  <div className="font-cormorant text-xl text-cream">Пространство Пара</div>
+                  <div className="font-golos text-xs text-cream/40 mt-1">Укажите адрес</div>
                 </div>
               </div>
             </div>
 
-            {/* Quick callback form */}
-            <div
-              className="p-6 rounded-sm"
-              style={{ background: 'var(--dark-3)', border: '1px solid rgba(212,168,87,0.1)' }}
-            >
+            <div className="p-6 rounded-sm" style={{ background: 'var(--dark-3)', border: '1px solid rgba(212,168,87,0.1)' }}>
               <div className="font-cormorant text-xl text-cream mb-4">Обратный звонок</div>
-              <div className="flex gap-3">
-                <input
-                  type="tel"
-                  placeholder="+7 (___) ___-__-__"
-                  className="flex-1 px-4 py-3 rounded-sm font-golos text-sm text-cream placeholder-cream/20 outline-none transition-all"
-                  style={{ background: 'var(--dark-2)', border: '1px solid rgba(212,168,87,0.15)' }}
-                />
-                <button className="btn-gold whitespace-nowrap">
-                  Позвоните мне
-                </button>
+              <div className="flex gap-3 flex-col sm:flex-row">
+                <input type="tel" placeholder="+7 (___) ___-__-__" className="flex-1 px-4 py-3 rounded-sm font-golos text-sm text-cream placeholder-cream/20 outline-none transition-all" style={{ background: 'var(--dark-2)', border: '1px solid rgba(212,168,87,0.15)' }} />
+                <button className="btn-gold whitespace-nowrap">Позвоните мне</button>
               </div>
-              <p className="font-golos text-[10px] text-cream/20 mt-3">
-                Перезвоним в течение 15 минут в рабочее время
-              </p>
+              <p className="font-golos text-[10px] text-cream/20 mt-3">Перезвоним в течение 15 минут в рабочее время</p>
             </div>
           </div>
         </div>
