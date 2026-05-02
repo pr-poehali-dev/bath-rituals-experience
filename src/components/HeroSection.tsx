@@ -70,7 +70,7 @@ export default function HeroSection() {
             { num: '500+', label: 'Гостей' },
             { num: '15+', label: 'Процедур' },
           ].map((stat) => (
-            <div key={stat.num} className="flex flex-col">
+            <div key={stat.label} className="flex flex-col">
               <span className="font-cormorant text-4xl text-gold font-light">{stat.num}</span>
               <span className="font-golos text-xs tracking-widest uppercase text-cream/40 mt-1">{stat.label}</span>
             </div>
