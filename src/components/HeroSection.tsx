@@ -127,7 +127,6 @@ export default function HeroSection() {
 
         <div className="flex flex-wrap gap-12 mt-16 opacity-0 animate-fade-in delay-800" style={{ animationFillMode: 'forwards' }}>
           {[
-            { num: '3', label: 'Года работы' },
             { num: '500+', label: 'Гостей' },
             { num: '15+', label: 'Процедур' },
           ].map((stat) => (
