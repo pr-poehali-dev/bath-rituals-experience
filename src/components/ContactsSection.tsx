@@ -84,7 +84,7 @@ export default function ContactsSection() {
           {/* Right */}
           <div style={{ opacity: inView ? 1 : 0, transform: inView ? 'translateX(0)' : 'translateX(30px)', transition: 'all 0.8s ease 0.2s' }}>
             <a
-              href="https://yandex.ru/maps/org/9801271735"
+              href="https://go.2gis.com/0HDqT"
               target="_blank"
               rel="noopener noreferrer"
               className="relative aspect-[4/3] rounded-sm overflow-hidden mb-6 flex items-center justify-center group block transition-all duration-300 hover:border-gold/30"
@@ -100,10 +100,10 @@ export default function ContactsSection() {
                   <div className="font-cormorant text-xl text-cream">Пространство Пара</div>
                   <div className="font-golos text-xs text-cream/40 mt-1">г. Артём, мкр. Глобус 2, д. 1А</div>
                   <div className="flex items-center justify-center gap-1.5 mt-3">
-                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(135deg, #FC3F1D 0%, #FF6534 100%)' }}>
-                      <span className="text-white font-bold" style={{ fontSize: '9px' }}>Я</span>
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'linear-gradient(135deg, #29CC29 0%, #1A9A1A 100%)' }}>
+                      <span className="text-white font-bold" style={{ fontSize: '9px' }}>2</span>
                     </div>
-                    <span className="font-golos text-xs text-gold/70 group-hover:text-gold transition-colors">Открыть на Яндекс Картах</span>
+                    <span className="font-golos text-xs text-gold/70 group-hover:text-gold transition-colors">Открыть в 2GIS</span>
                     <Icon name="ExternalLink" size={11} color="rgba(212,168,87,0.5)" />
                   </div>
                 </div>
